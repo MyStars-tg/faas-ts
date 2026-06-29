@@ -1,0 +1,55 @@
+{
+  "name": "@mystars-tg/faas-sdk",
+  "version": "0.1.3",
+  "description": "Official TypeScript SDK for the MyStars FaaS API — buy Telegram Stars & Premium for any @username, paid in TON or USDT.",
+  "license": "MIT",
+  "author": "MyStars.tg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "telegram",
+    "stars",
+    "premium",
+    "ton",
+    "usdt",
+    "mystars",
+    "faas",
+    "payments"
+  ],
+  "homepage": "https://mystars.tg/docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mystars-tg/faas-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mystars-tg/faas-ts/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../..",
+    "prepublishOnly": "npm run build"
+  }
+}

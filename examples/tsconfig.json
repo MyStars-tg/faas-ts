@@ -1,0 +1,14 @@
+{
+  "//": "Typecheck-only config for the runnable examples. Resolves the workspace packages from source via `paths` so the examples are verified against the real SDK types in CI (no install of the published packages needed). Run from the repo root: `npx tsc -p examples/tsconfig.json`.",
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@mystars-tg/faas-sdk": ["../packages/faas-sdk/src/index.ts"],
+      "@mystars-tg/faas-wallet": ["../packages/faas-wallet/src/index.ts"]
+    }
+  },
+  "include": ["*.ts"]
+}

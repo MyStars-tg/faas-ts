@@ -1,0 +1,44 @@
+{
+  "name": "@mystars-tg/faas-cli",
+  "version": "0.1.3",
+  "description": "Command-line tool for the MyStars FaaS API — pricing, recipient checks, order management, payment links, and webhook verification.",
+  "license": "MIT",
+  "author": "MyStars.tg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["telegram", "stars", "premium", "ton", "usdt", "mystars", "faas", "cli"],
+  "homepage": "https://mystars.tg/docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mystars-tg/faas-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mystars-tg/faas-ts/issues"
+  },
+  "bin": {
+    "mystars-faas": "./dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../..",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@mystars-tg/faas-sdk": "^0.1.3",
+    "commander": "^12.1.0"
+  }
+}

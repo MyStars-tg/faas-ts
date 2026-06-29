@@ -1,0 +1,48 @@
+{
+  "name": "@mystars-tg/faas-wallet",
+  "version": "0.1.3",
+  "description": "Opt-in TON wallet + payer for @mystars-tg/faas-sdk — generate/import a wallet and pay a FaaS order invoice (TON or USDT) from your OWN wallet. Node only. Holds keys only in memory; never persists/logs/transmits them.",
+  "license": "MIT",
+  "author": "MyStars.tg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["ton", "usdt", "telegram", "stars", "mystars", "faas", "wallet", "payments"],
+  "homepage": "https://mystars.tg/docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mystars-tg/faas-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mystars-tg/faas-ts/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --root ../..",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@mystars-tg/faas-sdk": "^0.1.3",
+    "@ton/core": "^0.62.0",
+    "@ton/crypto": "^3.3.0",
+    "@ton/ton": "^15.1.0"
+  }
+}
